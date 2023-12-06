@@ -44,7 +44,7 @@ def home():
 
 
 def show():
-    selected_taskname = st.selectbox("Choose what to edit", [task_name for task_name, _, _ in st.session_state.tasks], key="select_box_in_show")
+    selected_taskname = st.selectbox("Choose Task To Show", [task_name for task_name, _, _ in st.session_state.tasks], key="select_box_in_show")
 
     if selected_taskname:
         selected_task = next(task for task in st.session_state.tasks if task[0] == selected_taskname)
@@ -75,7 +75,7 @@ def add_task():
 
 
 def edit_task():
-    selected_taskname = st.selectbox("Choose what to edit", [task_name for task_name, _, _ in st.session_state.tasks])
+    selected_taskname = st.selectbox("Choose Task To Edit", [task_name for task_name, _, _ in st.session_state.tasks])
 
     if selected_taskname:
         selected_task = next(task for task in st.session_state.tasks if task[0] == selected_taskname)
